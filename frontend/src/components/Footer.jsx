@@ -1,0 +1,2 @@
+import { Link } from 'react-router-dom';
+export default function Footer() { return <footer className="site-footer"><div className="container d-flex justify-content-between align-items-center flex-wrap gap-3"><div><strong>SOLESTORE</strong><p className="mb-0">Good shoes. Better miles.</p></div><div className="footer-links"><Link to="/products">Shop all</Link><Link to="/orders">Orders</Link><span>© 2026 SoleStore</span></div></div></footer>; }

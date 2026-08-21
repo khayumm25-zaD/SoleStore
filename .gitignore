@@ -1,0 +1,17 @@
+.idea/
+.vscode/
+*.log
+node_modules/
+dist/
+target/
+.tools/
+
+.env
+.env.*
+!.env.example
+
+# Database dumps / local data
+*.sql
+
+# Build artifacts
+backend/target/

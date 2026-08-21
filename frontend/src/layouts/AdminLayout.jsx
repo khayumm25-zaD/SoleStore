@@ -1,0 +1,2 @@
+import { NavLink, Outlet } from 'react-router-dom';
+export default function AdminLayout(){return <div className="container admin-layout"><aside><p className="eyebrow">ADMIN</p>{[['/admin','Dashboard'],['/admin/products','Products'],['/admin/categories','Categories'],['/admin/orders','Orders'],['/admin/users','Users']].map(([to,label])=><NavLink key={to} to={to} end={to==='/admin'}>{label}</NavLink>)}</aside><section><Outlet/></section></div>}

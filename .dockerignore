@@ -1,0 +1,17 @@
+.git
+.github
+.gitignore
+
+node_modules
+frontend/node_modules
+
+.env
+.env.*
+!.env.example
+
+frontend/dist
+
+backend/target/*
+!backend/target/solestore-backend-0.0.1-SNAPSHOT.jar
+
+*.log

@@ -1,0 +1,1 @@
+export default function SearchBar({ value, onChange }) { return <input className="form-control search-field" value={value} onChange={(event) => onChange(event.target.value)} placeholder="Search shoes or brands" aria-label="Search products" />; }
