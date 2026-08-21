@@ -34,7 +34,16 @@ public class DataInitializer {
                         return roleRepository.save(role);
                     });
 
-            String adminEmail = "admin@solestore.com";
+            String adminEmail = System.getenv("ADMIN_EMAIL");
+            String adminPassword = System.getenv("ADMIN_PASSWORD");
+
+            if (adminEmail == null || adminEmail.isBlank()) {
+                throw new IllegalStateException("ADMIN_EMAIL environment variable must be set");
+            }
+
+            if (adminPassword == null || adminPassword.isBlank()) {
+                throw new IllegalStateException("ADMIN_PASSWORD environment variable must be set");
+            }
 
             if (!userRepository.existsByEmailIgnoreCase(adminEmail)) {
 
@@ -42,7 +51,7 @@ public class DataInitializer {
 
                 admin.setName("SoleStore Admin");
                 admin.setEmail(adminEmail);
-                admin.setPassword(passwordEncoder.encode("Admin@12345"));
+                admin.setPassword(passwordEncoder.encode(adminPassword));
                 admin.setMobile("9999999999");
                 admin.setRole(adminRole);
 
